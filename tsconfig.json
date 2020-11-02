@@ -4,14 +4,11 @@
     "moduleResolution": "node",
     "target": "es2017",
     "importsNotUsedAsValues": "error",
-    "isolatedModules": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "strict": true,
-    "declaration": true,
-    "outDir": "dist",
     "lib": ["esnext", "dom", "webworker"],
     "types": ["svelte"]
   },
-  "include": ["src/**/*", "@types/**/*"]
+  "include": ["**/*"]
 }

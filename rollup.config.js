@@ -5,25 +5,21 @@ import typescript from 'rollup-plugin-typescript2';
 
 import pkg from './package.json';
 
-const name = pkg.name
-  .replace(/^(@\S+\/)?(svelte-)?(\S+)/, '$3')
-  .replace(/^\w/, (m) => m.toUpperCase())
-  .replace(/-\w/g, (m) => m[1].toUpperCase());
-
 export default {
-  input: 'src/index.ts',
+  input: 'Meta.svelte',
   output: [
     { file: pkg.module, format: 'es' },
-    { file: pkg.main, format: 'umd', name }
+    { file: pkg.main, format: 'umd', name: 'Meta' }
   ],
   plugins: [
     svelte({
       preprocess: autoPreprocess({
         defaults: { script: 'typescript' }
-      }),
-      extensions: ['.svelte']
+      })
     }),
-    typescript(),
-    resolve()
+    resolve({
+      browser: true,
+      dedupe: ['svelte']
+    })
   ]
 };
