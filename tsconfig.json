@@ -8,7 +8,10 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "strict": true,
-    "lib": ["esnext", "dom", "webworker"]
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["esnext", "dom", "webworker"],
+    "types": ["svelte"]
   },
   "include": ["src/**/*", "@types/**/*"]
 }
