@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es2017",
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "lib": ["esnext", "dom", "webworker"]
+  },
+  "include": ["src/**/*", "@types/**/*"]
+}
