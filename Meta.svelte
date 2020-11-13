@@ -26,6 +26,8 @@
   /** OpenGraph Options **/
   export let openGraph: any = {
     type: undefined,
+    imageWidth: undefined,
+    imageHeight: undefined,
   }
   /** Facebook App ID **/
   export let facebookAppId: Optional<string> = undefined;
@@ -76,6 +78,14 @@
   {#if url}
     <link rel="canonical" href={url} />
     <meta property="og:url" content={url} />
+
+    {#if openGraph.imageWidth}
+      <meta property="og:image:width" content="{openGraph.imageWidth}">
+    {/if}
+
+    {#if openGraph.imageHeight}
+      <meta property="og:image:width" content="{openGraph.imageHeight}">
+    {/if}
   {/if}
   
   {#if url && logoUrl}

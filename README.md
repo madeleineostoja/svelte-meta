@@ -38,7 +38,7 @@ npm i svelte-meta
 | `sitemapUrl`     | string  | `sitemap`                       | `${url}/sitemap.xml` || undefined                                      |
 | `facebookAppId`  | string  | `fb:app_id`                     | undefined                                                              |
 | `twitter`        | object  | `twitter:`                      | { card: 'summary_large_image', site: undefined, creator: undefined }   |
-| `openGraph`      | object  | `og:`                           | { type: undefined }                                                    |
+| `openGraph`      | object  | `og:`                           | { type: undefined, imageWidth: undefined, imageHeight: undefined }     |
 
 ## Notes
 
