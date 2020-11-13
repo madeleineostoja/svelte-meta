@@ -8,32 +8,32 @@
   /** Page description **/
   export let description: Optional<string> = undefined;
   /** Page image **/
-  export let image: Optional<string> = undefined;
+  export let image: any = {
+    url: undefined,
+    width: undefined,
+    height: undefined,
+    alt: title || undefined,
+  };
   /** Page url **/
   export let url: Optional<string> = undefined;
   /** Site logo **/
-  export let logoUrl: string = url ? `${url}/logo.png` : undefined;
+  export let logoUrl: Optional<string> = undefined;
   /** Search URL **/
   export let searchUrl: Optional<string> = undefined;
   /** Sitemap URL **/
-  export let sitemapUrl: string = url ? `${url}/sitemap.xml` : undefined;
+  export let sitemapUrl: string = undefined;
   /** Twitter Options **/
   export let twitter: any = {
-    card: 'summary_large_image',
+    card: undefined,
     site: undefined,
     creator: undefined,
   };
   /** OpenGraph Options **/
   export let openGraph: any = {
     type: undefined,
-    imageWidth: undefined,
-    imageHeight: undefined,
     locale: 'en_US',
     siteName: undefined,
-    imageAlt: title || undefined,
   }
-  /** Facebook App ID **/
-  export let facebookAppId: Optional<string> = undefined;
 </script>
 
 <svelte:head>
@@ -43,9 +43,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="robots" content="index,follow" />
   <meta name="googlebot" content="index,follow" />
-  <link rel="sitemap" type="application/xml" href="{sitemapUrl}" />
 
-  <meta name="twitter:card" content="{twitter.card}" />
+  {#if sitemapUrl}
+    <link rel="sitemap" type="application/xml" href="{sitemapUrl}" />
+  {/if}
+
+  {#if twitter.card}
+    <meta name="twitter:card" content="{twitter.card}" />
+  {/if}
 
   {#if twitter.site}
     <meta name="twitter:site" content="{twitter.site}" />
@@ -53,10 +58,6 @@
 
   {#if twitter.creator}
     <meta name="twitter:creator" content="{twitter.creator}" />
-  {/if}
-
-  {#if facebookAppId}
-    <meta property="fb:app_id" content="{facebookAppId}" />
   {/if}
   
   {#if openGraph.type}
@@ -82,19 +83,19 @@
     <meta property="og:description" content={description} />
   {/if}
 
-  {#if image}
-    <meta property="og:image" content={image} />
+  {#if image.url}
+    <meta property="og:image" content={image.url} />
 
-    {#if openGraph.imageWidth}
-      <meta property="og:image:width" content="{openGraph.imageWidth}">
+    {#if image.width}
+      <meta property="og:image:width" content="{image.width}">
     {/if}
 
-    {#if openGraph.imageHeight}
-      <meta property="og:image:width" content="{openGraph.imageHeight}">
+    {#if image.height}
+      <meta property="og:image:width" content="{image.height}">
     {/if}
 
-    {#if openGraph.imageAlt}
-      <meta property="og:image:alt" content="{openGraph.imageAlt}">
+    {#if image.alt}
+      <meta property="og:image:alt" content="{image.alt}">
     {/if}
   {/if}
 

@@ -31,13 +31,12 @@ npm i svelte-meta
 | -------------    | ------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`          | string  | `<title>`, `title`, `og:title`  | undefined                                                                                                                                     |
 | `description`    | string  | `description`, `og:description` | undefined                                                                                                                                     |
-| `image`          | string  | `og:image`                      | undefined                                                                                                                                     |
+| `image`          | object  | `og:image`,                     | { url: undefined, width: undefined, height: undefined, alt: undefined }                                                                       |
 | `url`            | string  | `canonical`, `og:url`           | undefined                                                                                                                                     |
-| `logoUrl`        | string  | `JSON-LD`                       | `${url}/logo.png` || undefined                                                                                                                |
+| `logoUrl`        | string  | `JSON-LD`                       | undefined                                                                                                                                     |
 | `searchUrl`      | string  | `JSON-LD`                       | undefined                                                                                                                                     |
-| `sitemapUrl`     | string  | `sitemap`                       | `${url}/sitemap.xml` || undefined                                                                                                             |
-| `facebookAppId`  | string  | `fb:app_id`                     | undefined                                                                                                                                     |
-| `twitter`        | object  | `twitter:`                      | { card: 'summary_large_image', site: undefined, creator: undefined }                                                                          |
+| `sitemapUrl`     | string  | `sitemap`                       | undefined                                                                                                                                     |
+| `twitter`        | object  | `twitter:`                      | { card: undefined, site: undefined, creator: undefined }                                                                                      |
 | `openGraph`      | object  | `og:`                           | { type: undefined, imageWidth: undefined, imageHeight: undefined, imageAlt: `title` || undefined, locale: `en_US`, site_name: undefined }     |
 
 ## Notes
