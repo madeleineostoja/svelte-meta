@@ -3,6 +3,19 @@
   Metadata helper
 -->
 <script>
+
+  interface TwitterCardProps {
+    card: Optional<string>,
+    site: Optional<string>,
+    creator: Optional<string>,
+  }
+
+  interface OpenGraphProps {
+    type: Optional<string>,
+    locale: Optional<string>,
+    siteName: Optional<string>,
+  }
+
   /** Page title **/
   export let title: Optional<string> = undefined;
   /** Page description **/
@@ -21,15 +34,15 @@
   /** Search URL **/
   export let searchUrl: Optional<string> = undefined;
   /** Sitemap URL **/
-  export let sitemapUrl: string = undefined;
+  export let sitemapUrl: Optional<string> = undefined;
   /** Twitter Options **/
-  export let twitter: any = {
+  export let twitter: TwitterCardProps = {
     card: undefined,
     site: undefined,
     creator: undefined,
   };
   /** OpenGraph Options **/
-  export let openGraph: any = {
+  export let openGraph: OpenGraphProps = {
     type: undefined,
     locale: 'en_US',
     siteName: undefined,
