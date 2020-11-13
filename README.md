@@ -15,6 +15,7 @@ npm i svelte-meta
   title="My Page"
   description="It's a great page"
   image="/cover.png"
+  url="https://mypage.com/"
 />
 ```
 
@@ -27,5 +28,6 @@ npm i svelte-meta
 | `title`       | `<title>`, `title`, `og:title`  |
 | `description` | `description`, `og:description` |
 | `image`       | `og:image`                      |
+| `url`         | `canonical`, `og:url`           |
 
 > **Note:** Twitter inherits Open Graph (`og:`) properties if `twitter:` specific metadata is not set, which is why `svelte-meta` doesn't include them
