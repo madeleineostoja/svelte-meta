@@ -2,9 +2,13 @@
 
 Easily generate SEO metadata for Svelte.
 
+## Installation
+
 ```sh
 npm i svelte-meta
 ```
+
+## Usage
 
 ```svelte
 <script>
@@ -21,7 +25,7 @@ npm i svelte-meta
 
 `svelte-meta` will automatically set relevant HTML meta and `og:` properties, along with a `<title>` tag if a `title` is specified.
 
-### Properties
+## Properties
 
 | Property      | Metadata Set                    |
 | ------------- | ------------------------------- |
@@ -29,5 +33,10 @@ npm i svelte-meta
 | `description` | `description`, `og:description` |
 | `image`       | `og:image`                      |
 | `url`         | `canonical`, `og:url`           |
+| `logo`        | `JSON-LD`                       |
+| `searchUrl`   | `JSON-LD`                       |
 
-> **Note:** Twitter inherits Open Graph (`og:`) properties if `twitter:` specific metadata is not set, which is why `svelte-meta` doesn't include them
+## Notes
+
+- Twitter inherits Open Graph (`og:`) properties if `twitter:` specific metadata is not set, which is why `svelte-meta` doesn't include them
+- `searchUrl` must include a query param with the name `search_term_string` e.g. `https://google.com/search?q={search_term_string}`

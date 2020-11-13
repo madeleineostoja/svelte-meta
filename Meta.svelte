@@ -11,6 +11,10 @@
   export let image: Optional<string> = undefined;
   /** Page url */
   export let url: Optional<string> = undefined;
+  /** Site logo */
+  export let logo: string = `${url}/logo.png`;
+  /** Search URL */
+  export let searchUrl: Optional<string> = undefined;
 </script>
 
 <svelte:head>
@@ -32,5 +36,25 @@
   {#if url}
     <link rel="canonical" href="{url}"/>
     <meta property="og:url" content="{url}" />
+  {/if}
+
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": url,
+    "logo": logo
+  }</script>
+
+  {#if searchUrl}
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://jellypepper.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {searchUrl},
+        "query-input": "required name=search_term_string"
+      }
+    }</script>
   {/if}
 </svelte:head>
