@@ -30,6 +30,7 @@
     imageHeight: undefined,
     locale: 'en_US',
     siteName: undefined,
+    imageAlt: title || undefined,
   }
   /** Facebook App ID **/
   export let facebookAppId: Optional<string> = undefined;
@@ -90,6 +91,10 @@
 
     {#if openGraph.imageHeight}
       <meta property="og:image:width" content="{openGraph.imageHeight}">
+    {/if}
+
+    {#if openGraph.imageAlt}
+      <meta property="og:image:alt" content="{openGraph.imageAlt}">
     {/if}
   {/if}
 
