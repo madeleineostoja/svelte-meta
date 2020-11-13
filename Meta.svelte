@@ -28,6 +28,7 @@
     type: undefined,
     imageWidth: undefined,
     imageHeight: undefined,
+    locale: 'en_US',
   }
   /** Facebook App ID **/
   export let facebookAppId: Optional<string> = undefined;
@@ -58,6 +59,10 @@
   
   {#if openGraph.type}
     <meta property="og:type" content="{openGraph.type}" />
+  {/if}
+
+  {#if openGraph.locale}
+    <meta property="og:locale" content="{openGraph.locale}">
   {/if}
 
   {#if title}
