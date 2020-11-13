@@ -83,11 +83,6 @@
 
   {#if image}
     <meta property="og:image" content={image} />
-  {/if}
-
-  {#if url}
-    <link rel="canonical" href={url} />
-    <meta property="og:url" content={url} />
 
     {#if openGraph.imageWidth}
       <meta property="og:image:width" content="{openGraph.imageWidth}">
@@ -96,6 +91,11 @@
     {#if openGraph.imageHeight}
       <meta property="og:image:width" content="{openGraph.imageHeight}">
     {/if}
+  {/if}
+
+  {#if url}
+    <link rel="canonical" href={url} />
+    <meta property="og:url" content={url} />
   {/if}
   
   {#if url && logoUrl}
