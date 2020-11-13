@@ -29,6 +29,7 @@
     imageWidth: undefined,
     imageHeight: undefined,
     locale: 'en_US',
+    siteName: undefined,
   }
   /** Facebook App ID **/
   export let facebookAppId: Optional<string> = undefined;
@@ -63,6 +64,10 @@
 
   {#if openGraph.locale}
     <meta property="og:locale" content="{openGraph.locale}">
+  {/if}
+
+  {#if openGraph.siteName}
+    <meta property="og:site_name" content="{openGraph.siteName}">
   {/if}
 
   {#if title}
