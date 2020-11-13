@@ -27,14 +27,18 @@ npm i svelte-meta
 
 ## Properties
 
-| Property      | Metadata Set                    |
-| ------------- | ------------------------------- |
-| `title`       | `<title>`, `title`, `og:title`  |
-| `description` | `description`, `og:description` |
-| `image`       | `og:image`                      |
-| `url`         | `canonical`, `og:url`           |
-| `logo`        | `JSON-LD`                       |
-| `searchUrl`   | `JSON-LD`                       |
+| Property         | Type    | Metadata Set                    | Default                                                                |
+| -------------    | ------- | ------------------------------- | ---------------------------------------------------------------------- |
+| `title`          | string  | `<title>`, `title`, `og:title`  | undefined                                                              |
+| `description`    | string  | `description`, `og:description` | undefined                                                              |
+| `image`          | string  | `og:image`                      | undefined                                                              |
+| `url`            | string  | `canonical`, `og:url`           | undefined                                                              |
+| `logoUrl`        | string  | `JSON-LD`                       | `${url}/logo.png` || undefined                                         |
+| `searchUrl`      | string  | `JSON-LD`                       | undefined                                                              |
+| `sitemapUrl`     | string  | `sitemap`                       | `${url}/sitemap.xml` || undefined                                      |
+| `facebookAppId`  | string  | `fb:app_id`                     | undefined                                                              |
+| `twitter`        | object  | `twitter:`                      | { card: 'summary_large_image', site: undefined, creator: undefined }   |
+| `openGraph`      | object  | `og:`                           | { type: undefined }                                                    |
 
 ## Notes
 
