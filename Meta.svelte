@@ -57,6 +57,8 @@
     locale: 'en_US',
     site_name: undefined,
   }
+  /** Robots **/
+  export let robots: Optional<string> = 'index,follow';
 </script>
 
 <svelte:head>
@@ -64,8 +66,10 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="robots" content="index,follow" />
-  <meta name="googlebot" content="index,follow" />
+
+  {#if robots}
+    <meta name="robots" content="{robots}" />
+  {/if}
 
   {#if title}
     <title>{title}</title>
