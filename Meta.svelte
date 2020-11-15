@@ -16,12 +16,19 @@
     siteName: Optional<string>,
   }
 
+  interface ImageProps {
+    url: Optional<string>,
+    width: Optional<string>,
+    height: Optional<string>,
+    alt: Optional<string>,
+  }
+
   /** Page title **/
   export let title: Optional<string> = undefined;
   /** Page description **/
   export let description: Optional<string> = undefined;
   /** Page image **/
-  export let image: any = {
+  export let image: ImageProps = {
     url: undefined,
     width: undefined,
     height: undefined,
@@ -53,7 +60,7 @@
     image: image ? image.url : undefined,
     'image:width': image ? image.width : undefined,
     'image:height': image ? image.height : undefined,
-    'imagae:alt': image ? image.alt : undefined,
+    'image:alt': image ? image.alt : undefined,
     type: undefined,
     locale: 'en_US',
     site_name: undefined,
