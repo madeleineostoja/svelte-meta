@@ -40,6 +40,7 @@
     title,
     description,
     image: image ? image.url : undefined,
+    'image:alt': image ? image.alt : undefined,
     card: undefined,
     site: undefined,
     creator: undefined,
