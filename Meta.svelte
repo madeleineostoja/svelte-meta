@@ -37,15 +37,25 @@
   export let sitemapUrl: Optional<string> = undefined;
   /** Twitter Options **/
   export let twitter: TwitterCardProps = {
+    title,
+    description,
+    image: image ? image.url : undefined,
     card: undefined,
     site: undefined,
     creator: undefined,
   };
   /** OpenGraph Options **/
   export let openGraph: OpenGraphProps = {
+    title,
+    description,
+    url,
+    image: image ? image.url : undefined,
+    'image:width': image ? image.width : undefined,
+    'image:height': image ? image.height : undefined,
+    'imagae:alt': image ? image.alt : undefined,
     type: undefined,
     locale: 'en_US',
-    siteName: undefined,
+    site_name: undefined,
   }
 </script>
 
@@ -57,65 +67,30 @@
   <meta name="robots" content="index,follow" />
   <meta name="googlebot" content="index,follow" />
 
-  {#if sitemapUrl}
-    <link rel="sitemap" type="application/xml" href="{sitemapUrl}" />
-  {/if}
-
-  {#if twitter.card}
-    <meta name="twitter:card" content="{twitter.card}" />
-  {/if}
-
-  {#if twitter.site}
-    <meta name="twitter:site" content="{twitter.site}" />
-  {/if}
-
-  {#if twitter.creator}
-    <meta name="twitter:creator" content="{twitter.creator}" />
-  {/if}
-  
-  {#if openGraph.type}
-    <meta property="og:type" content="{openGraph.type}" />
-  {/if}
-
-  {#if openGraph.locale}
-    <meta property="og:locale" content="{openGraph.locale}">
-  {/if}
-
-  {#if openGraph.siteName}
-    <meta property="og:site_name" content="{openGraph.siteName}">
-  {/if}
-
   {#if title}
     <title>{title}</title>
     <meta name="title" content={title} />
-    <meta property="og:title" content={title} />
   {/if}
 
   {#if description}
     <meta name="description" content={description} />
-    <meta property="og:description" content={description} />
-  {/if}
-
-  {#if image.url}
-    <meta property="og:image" content={image.url} />
-
-    {#if image.width}
-      <meta property="og:image:width" content="{image.width}">
-    {/if}
-
-    {#if image.height}
-      <meta property="og:image:width" content="{image.height}">
-    {/if}
-
-    {#if image.alt}
-      <meta property="og:image:alt" content="{image.alt}">
-    {/if}
   {/if}
 
   {#if url}
     <link rel="canonical" href={url} />
-    <meta property="og:url" content={url} />
   {/if}
+
+  {#if sitemapUrl}
+    <link rel="sitemap" type="application/xml" href="{sitemapUrl}" />
+  {/if}
+
+  {#each Object.keys(twitter) as tag}
+    <meta property="og:{tag}" content="{twitter[tag]}" />
+  {/each}
+  
+  {#each Object.keys(openGraph) as tag}
+    <meta property="og:{tag}" content="{openGraph[tag]}" />
+  {/each}
   
   {#if url && logoUrl}
     <script type="application/ld+json">
