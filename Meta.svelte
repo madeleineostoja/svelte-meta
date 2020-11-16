@@ -2,7 +2,7 @@
   Meta Component
   Metadata helper
 -->
-<script>
+<script lang="ts">
 
   interface TwitterCardProps {
     card: Optional<string>,
@@ -23,7 +23,7 @@
     alt: Optional<string>,
   }
 
-  /** Page title **/
+  /** Page title */
   export let title: Optional<string> = undefined;
   /** Page description **/
   export let description: Optional<string> = undefined;
