@@ -94,10 +94,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
-
-  {#if robots}
-    <meta name="robots" content={robots} />
-  {/if}
+  <meta name="robots" content={robots} />
 
   {#if title}
     <title>{title}</title>
