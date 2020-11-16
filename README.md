@@ -2,6 +2,12 @@
 
 Easily generate SEO metadata for Svelte.
 
+### Features
+
+- Automatically set relevant social meta tags common attributes like `title` and `description`
+
+### Usage
+
 ```sh
 npm i svelte-meta
 ```
@@ -18,7 +24,21 @@ npm i svelte-meta
 />
 ```
 
-`svelte-meta` will automatically set relevant HTML meta and `og:` properties, along with a `<title>` tag if a `title` is specified.
+`svelte-meta` is written in Typescript, and requires Svelte preprocessing to be enabled in your bundler.
+
+Install `svelte-preprocess` and include it in the svelte config in your `rollup.config.js` or `webpack.config.js`
+
+```sh
+npm i svelte-preprocess
+```
+
+```js
+import autoPreprocess from 'svelte-preprocess';
+
+svelte({
+  preprocess: autoPreprocess()
+});
+```
 
 ### Properties
 

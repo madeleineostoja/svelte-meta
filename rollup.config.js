@@ -12,9 +12,7 @@ export default {
   ],
   plugins: [
     svelte({
-      preprocess: autoPreprocess({
-        defaults: { script: 'typescript' }
-      })
+      preprocess: autoPreprocess()
     }),
     resolve({
       browser: true,

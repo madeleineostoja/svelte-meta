@@ -2,7 +2,7 @@
   Meta Component
   Metadata helper
 -->
-<script>
+<script lang="ts">
   /** Page title */
   export let title: Optional<string> = undefined;
   /** Page description */
