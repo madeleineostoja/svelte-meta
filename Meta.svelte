@@ -5,15 +5,26 @@
 <script lang="ts">
 
   interface TwitterCardProps {
+    title: Optional<string>,
+    description: Optional<string>,
+    image: Optional<string>,
+    'image:alt': Optional<string>,
     card: Optional<string>,
     site: Optional<string>,
     creator: Optional<string>,
   }
 
   interface OpenGraphProps {
+    title: Optional<string>,
+    description: Optional<string>,
+    image: Optional<string>,
+    'image:alt': Optional<string>,
+    'image:width': Optional<string>,
+    'image:height': Optional<string>,
+    url: Optional<string>,
     type: Optional<string>,
     locale: Optional<string>,
-    siteName: Optional<string>,
+    site_name: Optional<string>,
   }
 
   interface ImageProps {
@@ -29,10 +40,10 @@
   export let description: Optional<string> = undefined;
   /** Page image **/
   export let image: ImageProps = {
+    alt: title,
     url: undefined,
     width: undefined,
     height: undefined,
-    alt: title || undefined,
   };
   /** Page url **/
   export let url: Optional<string> = undefined;
