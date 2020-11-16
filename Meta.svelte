@@ -5,33 +5,33 @@
 <script lang="ts">
 
   interface TwitterCardProps {
-    title: Optional<string>,
-    description: Optional<string>,
-    image: Optional<string>,
-    'image:alt': Optional<string>,
-    card: Optional<string>,
-    site: Optional<string>,
-    creator: Optional<string>,
+    title?: string,
+    description?: string,
+    image?: string,
+    'image:alt'?: string,
+    card?: string,
+    site?: string,
+    creator?: string,
   }
 
   interface OpenGraphProps {
-    title: Optional<string>,
-    description: Optional<string>,
-    image: Optional<string>,
-    'image:alt': Optional<string>,
-    'image:width': Optional<string>,
-    'image:height': Optional<string>,
-    url: Optional<string>,
-    type: Optional<string>,
-    locale: Optional<string>,
-    site_name: Optional<string>,
+    title?: string,
+    description?: string,
+    image?: string,
+    'image:alt'?: string,
+    'image:width'?: string,
+    'image:height'?: string,
+    url?: string,
+    type?: string,
+    locale?: string,
+    site_name?: string,
   }
 
   interface ImageProps {
-    url: Optional<string>,
-    width: Optional<string>,
-    height: Optional<string>,
-    alt: Optional<string>,
+    url?: string,
+    width?: string,
+    height?: string,
+    alt?: string,
   }
 
   /** Page title */
@@ -41,9 +41,6 @@
   /** Page image **/
   export let image: ImageProps = {
     alt: title,
-    url: undefined,
-    width: undefined,
-    height: undefined,
   };
   /** Page url **/
   export let url: Optional<string> = undefined;
@@ -55,13 +52,8 @@
   export let sitemapUrl: Optional<string> = undefined;
   /** Twitter Options **/
   export let twitter: TwitterCardProps = {
-    title,
-    description,
     image: image ? image.url : undefined,
     'image:alt': image ? image.alt : undefined,
-    card: undefined,
-    site: undefined,
-    creator: undefined,
   };
   /** OpenGraph Options **/
   export let openGraph: OpenGraphProps = {
@@ -72,9 +64,7 @@
     'image:width': image ? image.width : undefined,
     'image:height': image ? image.height : undefined,
     'image:alt': image ? image.alt : undefined,
-    type: undefined,
     locale: 'en_US',
-    site_name: undefined,
   }
   /** Robots **/
   export let robots: Optional<string> = 'index,follow';
