@@ -66,3 +66,5 @@ See the [svelte-preprocess docs](https://github.com/sveltejs/svelte-preprocess) 
 
 - Twitter inherits Open Graph (`og:`) properties if `twitter:` specific metadata is not set, which is why `svelte-meta` doesn't include them
 - `searchUrl` must include a query param with the name `search_term_string` e.g. `https://google.com/search?q={search_term_string}`
+- For an overview of `twitter` properties, visit [the Twitter Developer docs](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup)
+- For an overview of `openGraph` properties, visit [the OpenGraph website](https://ogp.me/)
