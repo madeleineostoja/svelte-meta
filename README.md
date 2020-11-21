@@ -50,17 +50,17 @@ See the [svelte-preprocess docs](https://github.com/sveltejs/svelte-preprocess) 
 
 ### Properties
 
-| Property      | Type                                                                                                             | Metadata Set                                                |
-| ------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| `title`       | `string`                                                                                                         | `<title>`, `title`, `og:title`                              |
-| `description` | `string`                                                                                                         | `description`, `og:description`                             |
-| `image`       | `string                                                                                                          | { url: string; width: number; height: number; alt: string}` | `og:image` |
-| `url`         | `string`                                                                                                         | `canonical`, `og:url`                                       |
-| `logoUrl`     | `string`                                                                                                         | `JSON-LD`                                                   |
-| `searchUrl`   | `string`                                                                                                         | `JSON-LD`                                                   |
-| `sitemapUrl`  | `string`                                                                                                         | `sitemap`                                                   |
-| `twitter`     | `{ title: string; description: string; card: string, site: string, creator: string }`                            | `twitter:`                                                  |
-| `openGraph`   | `{ type: string; imageWidth: number; imageHeight: number; imageAlt: string; locale: string; site_name: string }` | `og:`                                                       |
+| Property      | Type                                                                                                             | Metadata Set                                                             |
+| ------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `title`       | `string`                                                                                                         | `<title>`, `title`, `og:title`                                           |
+| `description` | `string`                                                                                                         | `description`, `og:description`                                          |
+| `image`       | `string`                                                                                                         | `{ url: string; width: number; height: number; alt: string}`, `og:image` |
+| `url`         | `string`                                                                                                         | `canonical`, `og:url`                                                    |
+| `logoUrl`     | `string`                                                                                                         | `JSON-LD`                                                                |
+| `searchUrl`   | `string`                                                                                                         | `JSON-LD`                                                                |
+| `sitemapUrl`  | `string`                                                                                                         | `sitemap`                                                                |
+| `twitter`     | `{ title: string; description: string; card: string, site: string, creator: string }`                            | `twitter:`                                                               |
+| `openGraph`   | `{ type: string; imageWidth: number; imageHeight: number; imageAlt: string; locale: string; site_name: string }` | `og:`                                                                    |
 
 ### Notes
 
