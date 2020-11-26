@@ -115,7 +115,8 @@
 
       twitter = {
         image: image.url,
-        'image:alt': image.alt || title
+        'image:alt': image.alt || title,
+        ...twitter
       };
     }
   }
