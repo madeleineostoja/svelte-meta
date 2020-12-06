@@ -28,26 +28,6 @@ npm i svelte-meta
 />
 ```
 
-#### Svelte-preprocess
-
-`svelte-meta` is written in Typescript, and requires Svelte preprocessing to be enabled. If you're using [Sapper](https://sapper.svelte.dev/) this comes enabled by default.
-
-To enable preprocessing, install `svelte-preprocess` and include it in the svelte config in your `rollup.config.js` or `webpack.config.js`
-
-```sh
-npm i svelte-preprocess
-```
-
-```js
-import autoPreprocess from 'svelte-preprocess';
-
-svelte({
-  preprocess: autoPreprocess()
-});
-```
-
-See the [svelte-preprocess docs](https://github.com/sveltejs/svelte-preprocess) for more.
-
 ### Properties
 
 | Property      | Type                                                                                                             | Metadata Set                                                             |
