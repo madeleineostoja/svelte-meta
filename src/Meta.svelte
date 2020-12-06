@@ -2,64 +2,43 @@
   Meta Component
   Metadata helper
 -->
-<script lang="ts">
-  type TwitterCardProps = {
-    title?: string;
-    description?: string;
-    image?: string;
-    'image:alt'?: string;
-    card?: string;
-    site?: string;
-    creator?: string;
-  };
+<script>
+  /** @type {string} */
+  export let title = undefined;
 
-  type OpenGraphProps = {
-    title?: string;
-    description?: string;
-    image?: string;
-    'image:alt'?: string;
-    'image:width'?: string;
-    'image:height'?: string;
-    url?: string;
-    type?: string;
-    locale?: string;
-    site_name?: string;
-  };
+  /** @type {string} */
+  export let description = undefined;
 
-  type ImageProps = {
-    url?: string;
-    width?: string;
-    height?: string;
-    alt?: string;
-  };
+  /** @type {string|ImageProps} */
+  export let image = undefined;
 
-  /** Page title */
-  export let title: Optional<string> = undefined;
-  /** Page description **/
-  export let description: Optional<string> = undefined;
-  /** Page image **/
-  export let image: string | ImageProps;
-  /** Page url **/
-  export let url: Optional<string> = undefined;
-  /** Site logo **/
-  export let logoUrl: Optional<string> = undefined;
-  /** Search URL **/
-  export let searchUrl: Optional<string> = undefined;
-  /** Sitemap URL **/
-  export let sitemapUrl: Optional<string> = undefined;
-  /** Twitter Options **/
-  export let twitter: TwitterCardProps = {};
-  /** OpenGraph Options **/
-  export let openGraph: OpenGraphProps = {
+  /** @type {string} */
+  export let url = undefined;
+
+  /** @type {string} */
+  export let logoUrl = undefined;
+
+  /** @type {string} */
+  export let searchUrl = undefined;
+
+  /**  @type {string} */
+  export let sitemapUrl = undefined;
+
+  /** @type {TwitterCardProps} */
+  export let twitter = {};
+
+  /** @type {OpenGraphProps} */
+  export let openGraph = {
     title,
     description,
     ...(url ? { url } : {}),
     locale: 'en_US'
   };
-  /** Robots **/
-  export let robots: Optional<string> = 'index,follow';
 
-  const jsonLd = (content: object) =>
+  /** @type {string} */
+  export let robots = 'index,follow';
+
+  const jsonLd = (content) =>
     `<${'script'} type="application/ld+json">${JSON.stringify(
       content
     )}</${'script'}>`;

@@ -3,10 +3,12 @@
   "description": "Easily generate SEO metadata for Svelte",
   "version": "0.2.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "svelte": "./Meta.svelte",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "svelte": "./src/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
+    "develop": "rollup -cw",
     "build": "rollup -c",
     "prepublishOnly": "npm run build"
   },
@@ -18,9 +20,9 @@
     "open-graph"
   ],
   "files": [
-    "*.ts",
-    "*.svelte",
-    "dist"
+    "src",
+    "dist",
+    "types"
   ],
   "repository": {
     "type": "git",
@@ -30,7 +32,7 @@
     "url": "https://github.com/seaneking/svelte-meta/issues"
   },
   "peerDependencies": {
-    "svelte": "^3.0.0"
+    "svelte": "^3.31.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^10.0.0",
