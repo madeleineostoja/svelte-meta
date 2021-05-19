@@ -1,8 +1,10 @@
 # Svelte Meta
 
+[![NPM](https://img.shields.io/npm/v/svelte-meta)](https://www.npmjs.com/package/svelte-meta) [![License](https://img.shields.io/npm/l/svelte-meta)](https://github.com/peppercorntsudio/svelte-meta/blob/master/LICENSE.md)
+
 Easily generate SEO metadata for Svelte.
 
-## Features
+### Features
 
 - Automatically set relevant social meta tags common attributes like `title` and `description`
 - Automatically set relevant JSON-LD metadata

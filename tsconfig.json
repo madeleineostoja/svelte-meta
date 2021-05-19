@@ -2,13 +2,13 @@
   "compilerOptions": {
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2017",
+    "target": "esnext",
     "importsNotUsedAsValues": "error",
     "sourceMap": true,
     "esModuleInterop": true,
     "strict": true,
-    "lib": ["esnext", "dom", "webworker"],
+    "lib": ["esnext", "dom"],
     "types": ["svelte"]
   },
-  "include": ["**/*"]
+  "include": ["src", "@types"]
 }

@@ -1,13 +1,5 @@
 {
   "singleQuote": true,
   "trailingComma": "none",
-  "svelteBracketNewLine": true,
-  "overrides": [
-    {
-      "files": ["*.css"],
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
+  "svelteBracketNewLine": true
 }
