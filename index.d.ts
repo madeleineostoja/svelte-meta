@@ -1,21 +1,17 @@
 /// <reference types="svelte" />
 import { SvelteComponentTyped } from 'svelte';
 
-import {
-  ImageProps,
-  TwitterCardProps,
-  OpenGraphProps
-} from './@types/interfaces';
+import { ImageProps, OpenGraphProps } from './@types/interfaces';
 
 export interface MetaProps {
   title?: string;
   description?: string;
   image?: string | ImageProps;
   url?: string;
-  logoUrl?: string;
-  searchUrl?: string;
-  sitemapUrl?: string;
-  twitter?: TwitterCardProps;
+  siteUrl?: string;
+  logo?: string;
+  search?: string;
+  sitemap?: string;
   openGraph?: OpenGraphProps;
   robots?: string;
 }
