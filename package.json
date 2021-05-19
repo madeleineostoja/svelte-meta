@@ -1,7 +1,7 @@
 {
   "name": "svelte-meta",
   "description": "Easily generate SEO metadata for Svelte",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
