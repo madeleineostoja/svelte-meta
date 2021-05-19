@@ -26,24 +26,23 @@ npm i svelte-meta
   title="My Page"
   description="It's a great page"
   image="/cover.png"
-  siteUrl="https://website.com"
   url="https://website.com/page
 />
 ```
 
 ### Properties
 
-| Property      | Type                                                                     | Description                             | Metadata Set                     |
-| ------------- | ------------------------------------------------------------------------ | --------------------------------------- | -------------------------------- |
-| `title`       | `string`                                                                 | Title of your project                   | `<title>`, `title`, `og:title`   |
-| `description` | `string`                                                                 | Descriptoin of your project             | `description`, `og:description`  |
-| `image`       | `string` or `{ url: string; width: number; height: number; alt: string}` | Image for social networks               | `og:image`                       |
-| `url`         | `string`                                                                 | URL of the current page                 | `canonical`, `JSON-LD`, `og:url` |
-| `siteUrl`     | `string`                                                                 | Root URL of your website                | `canonical`, `JSON-LD`, `og:url` |
-| `logo`        | `string`                                                                 | Logo image for your brand               | `JSON-LD`                        |
-| `search`      | `string`                                                                 | Search page base URL                    | `JSON-LD`                        |
-| `sitemap`     | `string`                                                                 | URL of your sitemap                     | `sitemap`                        |
-| `openGraph`   | Inherits other properties, plus custom `og:` properties, eg: `video`     | [OpenGraph properties](https://ogp.me/) | `og:`                            |
+| Property      | Type                                                                     | Description                             | Metadata Set                    |
+| ------------- | ------------------------------------------------------------------------ | --------------------------------------- | ------------------------------- |
+| `title`       | `string`                                                                 | Title of your project                   | `<title>`, `title`, `og:title`  |
+| `description` | `string`                                                                 | Descriptoin of your project             | `description`, `og:description` |
+| `image`       | `string` or `{ url: string; width: number; height: number; alt: string}` | Image for social networks               | `og:image`                      |
+| `url`         | `string`                                                                 | URL of the current page                 | `canonical` `og:url`            |
+| `siteUrl`     | `string`                                                                 | Root URL of your website                | `JSON-LD`                       |
+| `logo`        | `string`                                                                 | Logo image for your brand               | `JSON-LD`                       |
+| `search`      | `string`                                                                 | Search page base URL                    | `JSON-LD`                       |
+| `sitemap`     | `string`                                                                 | URL of your sitemap                     | `sitemap`                       |
+| `openGraph`   | Inherits other properties, plus custom `og:` properties, eg: `video`     | [OpenGraph properties](https://ogp.me/) | `og:`                           |
 
 ### Notes
 
