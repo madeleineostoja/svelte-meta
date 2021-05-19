@@ -26,27 +26,25 @@ npm i svelte-meta
   title="My Page"
   description="It's a great page"
   image="/cover.png"
-  url="https://mypage.com/"
+  siteUrl="https://website.com"
+  url="https://website.com/page
 />
 ```
 
 ### Properties
 
-| Property      | Type                                                                                                             | Metadata Set                                                             |
-| ------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `title`       | `string`                                                                                                         | `<title>`, `title`, `og:title`                                           |
-| `description` | `string`                                                                                                         | `description`, `og:description`                                          |
-| `image`       | `string`                                                                                                         | `{ url: string; width: number; height: number; alt: string}`, `og:image` |
-| `url`         | `string`                                                                                                         | `canonical`, `og:url`                                                    |
-| `logoUrl`     | `string`                                                                                                         | `JSON-LD`                                                                |
-| `searchUrl`   | `string`                                                                                                         | `JSON-LD`                                                                |
-| `sitemapUrl`  | `string`                                                                                                         | `sitemap`                                                                |
-| `twitter`     | `{ title: string; description: string; card: string, site: string, creator: string }`                            | `twitter:`                                                               |
-| `openGraph`   | `{ type: string; imageWidth: number; imageHeight: number; imageAlt: string; locale: string; site_name: string }` | `og:`                                                                    |
+| Property      | Type                                                                     | Description                             | Metadata Set                     |
+| ------------- | ------------------------------------------------------------------------ | --------------------------------------- | -------------------------------- |
+| `title`       | `string`                                                                 | Title of your project                   | `<title>`, `title`, `og:title`   |
+| `description` | `string`                                                                 | Descriptoin of your project             | `description`, `og:description`  |
+| `image`       | `string` or `{ url: string; width: number; height: number; alt: string}` | Image for social networks               | `og:image`                       |
+| `url`         | `string`                                                                 | URL of the current page                 | `canonical`, `JSON-LD`, `og:url` |
+| `siteUrl`     | `string`                                                                 | Root URL of your website                | `canonical`, `JSON-LD`, `og:url` |
+| `logo`        | `string`                                                                 | Logo image for your brand               | `JSON-LD`                        |
+| `search`      | `string`                                                                 | Search page base URL                    | `JSON-LD`                        |
+| `sitemap`     | `string`                                                                 | URL of your sitemap                     | `sitemap`                        |
+| `openGraph`   | Inherits other properties, plus custom `og:` properties, eg: `video`     | [OpenGraph properties](https://ogp.me/) | `og:`                            |
 
 ### Notes
 
 - Twitter inherits Open Graph (`og:`) properties if `twitter:` specific metadata is not set, which is why `svelte-meta` doesn't include them
-- `searchUrl` must include a query param with the name `search_term_string` e.g. `https://google.com/search?q={search_term_string}`
-- For an overview of `twitter` properties, visit [the Twitter Developer docs](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup)
-- For an overview of `openGraph` properties, visit [the OpenGraph website](https://ogp.me/)

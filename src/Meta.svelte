@@ -5,36 +5,26 @@
 <script>
   /** @type {string} */
   export let title = undefined;
-
   /** @type {string} */
   export let description = undefined;
-
   /** @type {string|ImageProps} */
   export let image = undefined;
-
   /** @type {string} */
   export let url = undefined;
-
   /** @type {string} */
-  export let logoUrl = undefined;
-
+  export let siteUrl = undefined;
   /** @type {string} */
-  export let searchUrl = undefined;
-
+  export let logo = undefined;
+  /** @type {string} */
+  export let search = undefined;
   /**  @type {string} */
-  export let sitemapUrl = undefined;
-
-  /** @type {TwitterCardProps} */
-  export let twitter = {};
-
+  export let sitemap = undefined;
   /** @type {OpenGraphProps} */
   export let openGraph = {
     title,
     description,
-    ...(url ? { url } : {}),
-    locale: 'en_US'
+    ...(url ? { url } : {})
   };
-
   /** @type {string} */
   export let robots = 'index,follow';
 
@@ -46,7 +36,6 @@
   $: {
     if (!!image && typeof image === 'string') {
       openGraph = { image, ...openGraph };
-      twitter = { image, ...twitter };
     }
 
     if (typeof image === 'object') {
@@ -56,12 +45,6 @@
         'image:height': image.height,
         'image:alt': image.alt || title,
         ...openGraph
-      };
-
-      twitter = {
-        image: image.url,
-        'image:alt': image.alt || title,
-        ...twitter
       };
     }
   }
@@ -86,41 +69,39 @@
     <meta name="description" content={description} />
   {/if}
 
-  {#if url}
-    <link rel="canonical" href={url} />
-  {/if}
-
-  {#if sitemapUrl}
-    <link rel="sitemap" type="application/xml" href={sitemapUrl} />
-  {/if}
-
-  {#each Object.keys(twitter) as tag}
-    <meta property="og:{tag}" content={twitter[tag]} />
-  {/each}
-
   {#each Object.keys(openGraph) as tag}
     <meta property="og:{tag}" content={openGraph[tag]} />
   {/each}
 
-  {#if url && logoUrl}
+  {#if !!url}
+    <link rel="canonical" href={url} />
+  {/if}
+
+  {#if sitemap}
+    <link rel="sitemap" type="application/xml" href={sitemap} />
+  {/if}
+
+  {#if !!siteUrl}
     {@html jsonLd({
       '@context': 'https://schema.org',
       '@type': 'Organization',
-      url: url,
-      logo: logoUrl
+      url: siteUrl,
+      logo: logo || ''
     })}
-  {/if}
 
-  {#if url && searchUrl}
     {@html jsonLd({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      url: url,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: { searchUrl },
-        'query-input': 'required name=search_term_string'
-      }
+      url: siteUrl,
+      ...(!!search
+        ? {
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: { searchUrl: `${search}?q={search_term_string}` },
+              'query-input': 'required name=search_term_string'
+            }
+          }
+        : {})
     })}
   {/if}
 </svelte:head>

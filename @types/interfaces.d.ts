@@ -1,28 +1,3 @@
-export type TwitterCardProps = {
-  title?: string;
-  description?: string;
-  image?: string;
-  'image:alt'?: string;
-  card?: string;
-  site?: string;
-  'site:id'?: string;
-  creator?: string;
-  'creator:id'?: string;
-  player?: string;
-  'player:width'?: string;
-  'player:height'?: string;
-  'player:stream'?: string;
-  'app:name:iphone'?: string;
-  'app:id:iphone'?: string;
-  'app:url:iphone'?: string;
-  'app:name:ipad'?: string;
-  'app:id:ipad'?: string;
-  'app:url:ipad'?: string;
-  'app:name:googleplay'?: string;
-  'app:id:googleplay'?: string;
-  'app:url:googleplay'?: string;
-};
-
 export type OpenGraphProps = {
   /* Basic */
   title?: string;
